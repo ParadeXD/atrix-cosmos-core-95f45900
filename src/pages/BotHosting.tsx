@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import PlanCard from "@/components/PlanCard";
-import SectionHeading from "@/components/SectionHeading";
+import PageHeroBanner from "@/components/PageHeroBanner";
+import botBanner from "@/assets/bot-banner.jpg";
 
 const plans = [
   { name: "Starter", icon: "💠", tagline: "Affordable start for small bots", ram: "1 GB", cpu: "1 vCore", storage: "5 GB", price: "₹35" },
@@ -11,12 +12,13 @@ const plans = [
 
 const BotHosting = () => (
   <Layout>
-    <section className="max-w-6xl mx-auto px-6 py-16">
-      <SectionHeading
-        title="Discord Bot Hosting"
-        subtitle="Affordable · Reliable · 24/7 Online"
-      />
+    <PageHeroBanner
+      image={botBanner}
+      title="Discord Bot Hosting"
+      subtitle="Affordable · Reliable · 24/7 Online"
+    />
 
+    <section className="max-w-6xl mx-auto px-6 pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {plans.map((p, i) => (
           <PlanCard key={p.name} {...p} index={i} />

@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import PlanCard from "@/components/PlanCard";
 import SectionHeading from "@/components/SectionHeading";
+import PageHeroBanner from "@/components/PageHeroBanner";
+import minecraftBanner from "@/assets/minecraft-banner.jpg";
 
 const plans = [
   { name: "Dirt", icon: "🌱", tagline: "Best for testing & small servers", ram: "2 GB", cpu: "80%", storage: "6 GB NVMe", ports: "1", databases: "1", backups: "1", price: "₹50" },
@@ -14,19 +16,19 @@ const plans = [
 
 const MinecraftHosting = () => (
   <Layout>
-    <section className="max-w-7xl mx-auto px-6 py-16">
-      <SectionHeading
-        title="Minecraft Server Hosting"
-        subtitle="Starting at just ₹50/GB RAM · NVMe SSD · DDoS Protection · High Performance"
-      />
+    <PageHeroBanner
+      image={minecraftBanner}
+      title="Minecraft Server Hosting"
+      subtitle="Starting at just ₹50/GB RAM · NVMe SSD · DDoS Protection · High Performance"
+    />
 
+    <section className="max-w-7xl mx-auto px-6 pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {plans.map((p, i) => (
           <PlanCard key={p.name} {...p} index={i} />
         ))}
       </div>
 
-      {/* Custom plan CTA */}
       <div className="mt-12 text-center glass-panel p-8 max-w-2xl mx-auto">
         <h3 className="font-display font-bold text-foreground text-xl mb-2">🛠️ Need a Custom Plan?</h3>
         <p className="text-muted-foreground text-sm mb-4">Different RAM, CPU, or storage? We can create a plan tailored to your needs.</p>
@@ -40,7 +42,6 @@ const MinecraftHosting = () => (
         </a>
       </div>
 
-      {/* Why section */}
       <div className="mt-16 max-w-3xl mx-auto">
         <SectionHeading title="Why Atrix Nodes for Minecraft?" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
