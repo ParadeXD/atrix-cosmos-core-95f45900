@@ -1,117 +1,100 @@
-import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Wifi, Clock, Server } from "lucide-react";
+import mapBg from "@/assets/global-map.png";
 
 const locations = [
-  { name: "India", flag: "🇮🇳", x: 68.5, y: 40, city: "Mumbai" },
-  { name: "United States", flag: "🇺🇸", x: 22, y: 35, city: "Dallas" },
-  { name: "Singapore", flag: "🇸🇬", x: 76, y: 52, city: "Singapore" },
+  {
+    name: "India",
+    flag: "🇮🇳",
+    x: 65,
+    y: 42,
+    city: "Mumbai",
+    ping: "12ms",
+    uptime: "99.98%",
+    servers: 4,
+    status: "Operational",
+  },
+  {
+    name: "United States",
+    flag: "🇺🇸",
+    x: 20,
+    y: 32,
+    city: "Dallas",
+    ping: "45ms",
+    uptime: "99.95%",
+    servers: 2,
+    status: "Operational",
+  },
+  {
+    name: "Singapore",
+    flag: "🇸🇬",
+    x: 75.5,
+    y: 55,
+    city: "Singapore",
+    ping: "28ms",
+    uptime: "99.99%",
+    servers: 3,
+    status: "Operational",
+  },
 ];
 
 const GlobalMap = () => {
+  const [active, setActive] = useState<string | null>(null);
+
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      {/* SVG World Map */}
-      <div className="relative glass-panel p-6 md:p-10 overflow-hidden">
-        {/* Animated grid background */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="hsl(217 91% 60%)" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
+    <div className="relative w-full max-w-5xl mx-auto">
+      <div className="relative overflow-hidden rounded-2xl border border-border/30">
+        {/* Map image background */}
+        <div className="relative aspect-[2.2/1] w-full">
+          <img
+            src={mapBg}
+            alt="Global server locations"
+            className="w-full h-full object-cover"
+          />
 
-        {/* Simplified world map outline using SVG */}
-        <div className="relative aspect-[2/1] w-full">
+          {/* Subtle overlay for contrast */}
+          <div className="absolute inset-0 bg-background/20" />
+
+          {/* Connection lines SVG overlay */}
           <svg
-            viewBox="0 0 1000 500"
-            className="w-full h-full"
-            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 455"
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            preserveAspectRatio="xMidYMid slice"
           >
-            {/* Simplified continent outlines */}
-            {/* North America */}
-            <path
-              d="M150,80 L200,60 L260,70 L280,100 L300,120 L280,160 L260,200 L240,220 L200,240 L180,230 L160,200 L140,170 L130,140 L140,100 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
+            {/* Animated connection arcs */}
+            <motion.path
+              d="M200,145 Q440,80 650,191"
+              fill="none"
+              stroke="hsl(200 100% 50% / 0.15)"
               strokeWidth="1"
-            />
-            {/* South America */}
-            <path
-              d="M240,260 L280,250 L310,280 L320,320 L310,370 L290,400 L260,420 L240,400 L230,360 L220,320 L225,280 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
-              strokeWidth="1"
-            />
-            {/* Europe */}
-            <path
-              d="M450,80 L480,70 L520,75 L540,90 L530,120 L510,140 L480,150 L460,140 L440,120 L440,100 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
-              strokeWidth="1"
-            />
-            {/* Africa */}
-            <path
-              d="M460,170 L510,160 L540,180 L560,220 L560,280 L540,340 L510,380 L480,370 L460,330 L450,280 L445,230 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
-              strokeWidth="1"
-            />
-            {/* Asia */}
-            <path
-              d="M560,60 L620,50 L700,60 L760,80 L800,100 L810,140 L790,180 L750,200 L700,210 L660,200 L620,180 L580,160 L560,130 L550,100 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
-              strokeWidth="1"
-            />
-            {/* India subcontinent */}
-            <path
-              d="M660,200 L690,190 L710,210 L700,250 L680,270 L660,260 L650,230 Z"
-              fill="hsl(217 91% 60% / 0.12)"
-              stroke="hsl(217 91% 60% / 0.4)"
-              strokeWidth="1"
-            />
-            {/* Australia */}
-            <path
-              d="M770,320 L830,310 L860,330 L860,360 L840,380 L800,390 L770,370 L760,350 Z"
-              fill="hsl(217 91% 60% / 0.08)"
-              stroke="hsl(217 91% 60% / 0.3)"
-              strokeWidth="1"
-            />
-
-            {/* Connection lines between locations */}
-            <motion.line
-              x1="220" y1="175" x2="685" y2="200"
-              stroke="hsl(217 91% 60% / 0.2)"
-              strokeWidth="1"
-              strokeDasharray="6 4"
+              strokeDasharray="4 6"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2, delay: 0.5 }}
+              transition={{ duration: 2.5, delay: 0.5 }}
             />
-            <motion.line
-              x1="685" y1="200" x2="760" y2="260"
-              stroke="hsl(217 91% 60% / 0.2)"
+            <motion.path
+              d="M650,191 Q720,210 755,250"
+              fill="none"
+              stroke="hsl(200 100% 50% / 0.15)"
               strokeWidth="1"
-              strokeDasharray="6 4"
+              strokeDasharray="4 6"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2, delay: 1 }}
+              transition={{ duration: 2, delay: 1.2 }}
             />
-            <motion.line
-              x1="220" y1="175" x2="760" y2="260"
-              stroke="hsl(217 91% 60% / 0.15)"
+            <motion.path
+              d="M200,145 Q500,300 755,250"
+              fill="none"
+              stroke="hsl(200 100% 50% / 0.1)"
               strokeWidth="1"
-              strokeDasharray="6 4"
+              strokeDasharray="4 6"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2, delay: 1.5 }}
+              transition={{ duration: 3, delay: 1.8 }}
             />
           </svg>
 
@@ -123,29 +106,97 @@ const GlobalMap = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 + i * 0.3, type: "spring", damping: 12 }}
-              className="absolute group"
+              className="absolute z-10"
               style={{ left: `${loc.x}%`, top: `${loc.y}%`, transform: "translate(-50%, -50%)" }}
             >
-              {/* Pulsing ring */}
+              {/* Outer pulse ring */}
               <motion.div
-                className="absolute inset-0 -m-3 rounded-full border border-primary/30"
-                animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
+                className="absolute -inset-4 rounded-full border border-cyan-400/30"
+                animate={{ scale: [1, 2.2, 1], opacity: [0.6, 0, 0.6] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.7 }}
+              />
+              {/* Inner pulse */}
+              <motion.div
+                className="absolute -inset-2 rounded-full bg-cyan-400/10"
+                animate={{ scale: [1, 1.6, 1], opacity: [0.4, 0, 0.4] }}
                 transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
               />
-              {/* Dot */}
-              <div className="w-3 h-3 rounded-full bg-primary shadow-glow relative z-10 cursor-pointer" />
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 glass-panel px-3 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-20">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">{loc.flag}</span>
-                  <div>
-                    <p className="text-xs font-display font-semibold text-foreground">{loc.name}</p>
-                    <p className="text-[10px] text-muted-foreground flex items-center gap-1">
-                      <MapPin className="w-2.5 h-2.5" /> {loc.city}
-                    </p>
-                  </div>
-                </div>
-              </div>
+
+              {/* Clickable dot */}
+              <button
+                onClick={() => setActive(active === loc.name ? null : loc.name)}
+                className="relative w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_3px_rgba(34,211,238,0.5)] cursor-pointer hover:scale-150 transition-transform duration-300 z-20"
+                aria-label={`View ${loc.city} server info`}
+              />
+
+              {/* Info card popover */}
+              <AnimatePresence>
+                {active === loc.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.9 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-30 w-56"
+                  >
+                    <div className="bg-[hsl(220,20%,8%)] border border-border/50 backdrop-blur-2xl rounded-xl p-4 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]">
+                      {/* Header */}
+                      <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-border/30">
+                        <span className="text-xl">{loc.flag}</span>
+                        <div>
+                          <p className="text-sm font-display font-bold text-foreground">{loc.city}</p>
+                          <p className="text-[10px] text-muted-foreground">{loc.name}</p>
+                        </div>
+                        <span className="ml-auto flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="text-[10px] text-emerald-400 font-medium">Live</span>
+                        </span>
+                      </div>
+
+                      {/* Stats */}
+                      <div className="space-y-2.5">
+                        <div className="flex items-center justify-between">
+                          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Wifi className="w-3 h-3 text-cyan-400" /> Latency
+                          </span>
+                          <span className="text-xs font-mono font-bold text-cyan-400">{loc.ping}</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Clock className="w-3 h-3 text-emerald-400" /> Uptime
+                          </span>
+                          <span className="text-xs font-mono font-bold text-emerald-400">{loc.uptime}</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Server className="w-3 h-3 text-violet-400" /> Nodes
+                          </span>
+                          <span className="text-xs font-mono font-bold text-violet-400">{loc.servers} active</span>
+                        </div>
+                      </div>
+
+                      {/* Ping bar */}
+                      <div className="mt-3 pt-3 border-t border-border/30">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[10px] text-muted-foreground">Network Quality</span>
+                          <span className="text-[10px] font-medium text-emerald-400">Excellent</span>
+                        </div>
+                        <div className="w-full h-1 rounded-full bg-border/30 overflow-hidden">
+                          <motion.div
+                            className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"
+                            initial={{ width: 0 }}
+                            animate={{ width: "95%" }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 bg-[hsl(220,20%,8%)] border-r border-b border-border/50 rotate-45" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
