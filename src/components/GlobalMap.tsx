@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Wifi, Clock, Server } from "lucide-react";
-import mapBg from "@/assets/global-map.png";
+import mapBg from "@/assets/global-map-new.avif";
 
 const locations = [
   {
