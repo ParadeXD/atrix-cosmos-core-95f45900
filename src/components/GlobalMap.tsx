@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Wifi, Clock, Server } from "lucide-react";
-import mapBg from "@/assets/global-map.png";
+import mapBg from "@/assets/global-map-new.avif";
 
 const locations = [
   {
@@ -43,18 +43,19 @@ const GlobalMap = () => {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
-      <div className="relative overflow-hidden rounded-2xl border border-border/30">
-        {/* Map image background */}
+    <div className="relative w-full max-w-6xl mx-auto">
+      <div className="relative overflow-hidden">
+        {/* Map image background - blended with page */}
         <div className="relative aspect-[2.2/1] w-full">
           <img
             src={mapBg}
             alt="Global server locations"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain opacity-40"
           />
 
-          {/* Subtle overlay for contrast */}
-          <div className="absolute inset-0 bg-background/20" />
+          {/* Edge fade to blend with background */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
 
           {/* Connection lines SVG overlay */}
           <svg
