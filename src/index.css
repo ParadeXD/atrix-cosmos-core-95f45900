@@ -54,6 +54,54 @@
     --sidebar-border: 0 0% 14%;
     --sidebar-ring: 217 91% 60%;
   }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 217 91% 50%;
+
+    /* Custom tokens */
+    --glass-bg: 0 0% 0% / 0.03;
+    --glass-border: 0 0% 0% / 0.08;
+    --glass-hover: 0 0% 0% / 0.06;
+    --glow-primary: 217 91% 50% / 0.2;
+    --glow-subtle: 217 91% 50% / 0.08;
+    --text-gradient-start: 0 0% 15%;
+    --text-gradient-end: 0 0% 40%;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 217 91% 50%;
+  }
 }
 
 @layer base {
@@ -78,9 +126,9 @@
   .text-shimmer {
     background: linear-gradient(
       135deg,
-      hsl(0 0% 100%) 0%,
-      hsl(217 91% 75%) 50%,
-      hsl(0 0% 100%) 100%
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--foreground)) 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -89,7 +137,7 @@
     animation: shimmer 3s linear infinite;
   }
   .text-silver {
-    background: linear-gradient(135deg, hsl(0 0% 90%), hsl(0 0% 60%));
+    background: linear-gradient(135deg, hsl(var(--text-gradient-start)), hsl(var(--text-gradient-end)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

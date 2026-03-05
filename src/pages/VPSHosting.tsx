@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import PlanCard from "@/components/PlanCard";
 import SectionHeading from "@/components/SectionHeading";
+import PageHeroBanner from "@/components/PageHeroBanner";
+import vpsBanner from "@/assets/vps-banner.jpg";
 
 const plans = [
   { name: "VPS Nova", icon: "🌟", tagline: "Clean start. Silent power.", ram: "8 GB DDR4", cpu: "2 vCPU (Intel Xeon)", storage: "50 GB NVMe", bandwidth: "1 TB", price: "₹250" },
@@ -13,19 +15,19 @@ const plans = [
 
 const VPSHosting = () => (
   <Layout>
-    <section className="max-w-7xl mx-auto px-6 py-16">
-      <SectionHeading
-        title="VPS Hosting"
-        subtitle="Intel Xeon Power · NVMe Speed · DDoS Protected · Full Root Access"
-      />
+    <PageHeroBanner
+      image={vpsBanner}
+      title="VPS Hosting"
+      subtitle="Intel Xeon Power · NVMe Speed · DDoS Protected · Full Root Access"
+    />
 
+    <section className="max-w-7xl mx-auto px-6 pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {plans.map((p, i) => (
           <PlanCard key={p.name} {...p} index={i} />
         ))}
       </div>
 
-      {/* Ryzen CTA */}
       <div className="mt-12 text-center glass-panel p-8 max-w-2xl mx-auto">
         <h3 className="font-display font-bold text-foreground text-xl mb-2">⚡ Ryzen 5 VPS Plans Available!</h3>
         <p className="text-muted-foreground text-sm mb-4">Higher clock speeds · Better single-core performance · Ideal for gaming & heavy workloads</p>
@@ -39,7 +41,6 @@ const VPSHosting = () => (
         </a>
       </div>
 
-      {/* Locations */}
       <div className="mt-16 max-w-3xl mx-auto text-center">
         <SectionHeading title="Global Locations" />
         <div className="flex flex-wrap justify-center gap-4">
