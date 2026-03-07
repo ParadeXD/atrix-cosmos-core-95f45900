@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 interface PlanCardProps {
   name: string;
-  icon: string;
+  iconImg?: string;
   tagline: string;
   ram: string;
   cpu: string;
@@ -18,7 +18,7 @@ interface PlanCardProps {
 }
 
 const PlanCard = ({
-  name, icon, tagline, ram, cpu, storage,
+  name, iconImg, tagline, ram, cpu, storage,
   ports, databases, backups, bandwidth, price, popular, index, image
 }: PlanCardProps) => {
   return (
@@ -56,7 +56,9 @@ const PlanCard = ({
             Popular
           </span>
         )}
-        <div className="text-2xl mb-2">{icon}</div>
+        {iconImg && (
+          <img src={iconImg} alt={name} className="w-10 h-10 object-contain mb-2" />
+        )}
         <h3 className="font-display font-bold text-foreground text-lg">{name}</h3>
         <p className="text-xs text-muted-foreground mb-4">{tagline}</p>
 
