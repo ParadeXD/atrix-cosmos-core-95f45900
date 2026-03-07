@@ -11,7 +11,7 @@ import Index from "./pages/Index";
 import MinecraftHosting from "./pages/MinecraftHosting";
 import VPSHosting from "./pages/VPSHosting";
 import BotHosting from "./pages/BotHosting";
-import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +25,8 @@ const AnimatedRoutes = () => {
         <Route path="/minecraft" element={<PageTransition><MinecraftHosting /></PageTransition>} />
         <Route path="/vps" element={<PageTransition><VPSHosting /></PageTransition>} />
         <Route path="/bot-hosting" element={<PageTransition><BotHosting /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><AboutUs /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><AboutUs /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>

@@ -5,6 +5,8 @@ import Layout from "@/components/Layout";
 import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
 import GlobalMap from "@/components/GlobalMap";
+import BrandLogos from "@/components/BrandLogos";
+import DiscordBanner from "@/components/DiscordBanner";
 import heroBg from "@/assets/hero-bg.jpg";
 import serverRack from "@/assets/server-rack.jpg";
 import minecraftWorld from "@/assets/minecraft-world.jpg";
@@ -151,6 +153,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Brand Logos */}
+      <BrandLogos />
+
       {/* Server rack showcase */}
       <section className="relative py-20 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
@@ -252,6 +257,9 @@ const Index = () => {
         <GlobalMap />
       </section>
 
+      {/* Discord Banner */}
+      <DiscordBanner />
+
       {/* CTA */}
       <section className="max-w-3xl mx-auto px-6 py-20 text-center">
         <motion.div
@@ -276,10 +284,10 @@ const Index = () => {
                 Get Started
               </Link>
               <Link
-                to="/contact"
+                to="/about"
                 className="glass-panel-hover px-8 py-3 rounded-2xl text-sm font-display font-semibold text-foreground"
               >
-                Contact Sales
+                About Us
               </Link>
             </div>
           </div>

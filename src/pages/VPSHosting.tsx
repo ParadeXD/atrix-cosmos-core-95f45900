@@ -3,14 +3,15 @@ import PlanCard from "@/components/PlanCard";
 import SectionHeading from "@/components/SectionHeading";
 import PageHeroBanner from "@/components/PageHeroBanner";
 import vpsBanner from "@/assets/vps-banner.jpg";
+import vpsNetwork from "@/assets/vps-network.jpg";
 
 const plans = [
-  { name: "VPS Nova", icon: "🌟", tagline: "Clean start. Silent power.", ram: "8 GB DDR4", cpu: "2 vCPU (Intel Xeon)", storage: "50 GB NVMe", bandwidth: "1 TB", price: "₹250" },
-  { name: "VPS Ignite", icon: "🔥", tagline: "Smooth. Balanced. Reliable.", ram: "16 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "70 GB NVMe", bandwidth: "2 TB", price: "₹450" },
-  { name: "VPS Stratos", icon: "🚀", tagline: "Built to scale.", ram: "24 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "100 GB NVMe", bandwidth: "3 TB", price: "₹721", popular: true },
-  { name: "VPS Titan X", icon: "💎", tagline: "Heavy power. Zero compromise.", ram: "28 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "132 GB NVMe", bandwidth: "4 TB", price: "₹1,120" },
-  { name: "VPS Dominus", icon: "🦾", tagline: "Pure muscle.", ram: "32 GB DDR4", cpu: "6 vCPU (Intel Xeon)", storage: "150 GB NVMe", bandwidth: "5 TB", price: "₹1,980" },
-  { name: "VPS Overdrive", icon: "👑", tagline: "Absolute control. Maximum authority.", ram: "64 GB DDR4", cpu: "10 vCPU (Intel Xeon)", storage: "165 GB NVMe", bandwidth: "Unlimited", price: "₹2,140" },
+  { name: "VPS Nova", icon: "⚡", tagline: "Clean start. Silent power.", ram: "8 GB DDR4", cpu: "2 vCPU (Intel Xeon)", storage: "50 GB NVMe", bandwidth: "1 TB", price: "₹250", image: vpsNetwork },
+  { name: "VPS Ignite", icon: "🔥", tagline: "Smooth. Balanced. Reliable.", ram: "16 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "70 GB NVMe", bandwidth: "2 TB", price: "₹450", image: vpsNetwork },
+  { name: "VPS Stratos", icon: "🚀", tagline: "Built to scale.", ram: "24 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "100 GB NVMe", bandwidth: "3 TB", price: "₹721", popular: true, image: vpsNetwork },
+  { name: "VPS Titan X", icon: "💠", tagline: "Heavy power. Zero compromise.", ram: "28 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "132 GB NVMe", bandwidth: "4 TB", price: "₹1,120", image: vpsNetwork },
+  { name: "VPS Dominus", icon: "🛡️", tagline: "Pure muscle.", ram: "32 GB DDR4", cpu: "6 vCPU (Intel Xeon)", storage: "150 GB NVMe", bandwidth: "5 TB", price: "₹1,980", image: vpsNetwork },
+  { name: "VPS Overdrive", icon: "👑", tagline: "Absolute control. Maximum authority.", ram: "64 GB DDR4", cpu: "10 vCPU (Intel Xeon)", storage: "165 GB NVMe", bandwidth: "Unlimited", price: "₹2,140", image: vpsNetwork },
 ];
 
 const VPSHosting = () => (
