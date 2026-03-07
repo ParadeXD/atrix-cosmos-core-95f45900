@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { MoreVertical, X, Home, Gamepad2, Server, Bot, Mail, Activity, ExternalLink, MessageSquare } from "lucide-react";
+import { MoreVertical, X, Home, Gamepad2, Server, Bot, Users, Activity, ExternalLink, MessageSquare } from "lucide-react";
 import logo from "@/assets/atrix-logo.webp";
 
 const navItems = [
@@ -9,7 +9,7 @@ const navItems = [
   { label: "Minecraft Hosting", to: "/minecraft", icon: Gamepad2 },
   { label: "VPS Hosting", to: "/vps", icon: Server },
   { label: "Bot Hosting", to: "/bot-hosting", icon: Bot },
-  { label: "Contact", to: "/contact", icon: Mail },
+  { label: "About Us", to: "/about", icon: Users },
 ];
 
 const externalItems = [
