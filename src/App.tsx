@@ -26,7 +26,6 @@ const AnimatedRoutes = () => {
         <Route path="/vps" element={<PageTransition><VPSHosting /></PageTransition>} />
         <Route path="/bot-hosting" element={<PageTransition><BotHosting /></PageTransition>} />
         <Route path="/about" element={<PageTransition><AboutUs /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><AboutUs /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
