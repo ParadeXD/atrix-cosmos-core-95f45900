@@ -2,12 +2,13 @@ import Layout from "@/components/Layout";
 import PlanCard from "@/components/PlanCard";
 import PageHeroBanner from "@/components/PageHeroBanner";
 import botBanner from "@/assets/bot-banner.jpg";
+import serverRack from "@/assets/server-rack.jpg";
 
 const plans = [
-  { name: "Starter", icon: "💠", tagline: "Affordable start for small bots", ram: "1 GB", cpu: "1 vCore", storage: "5 GB", price: "₹35" },
-  { name: "Basic", icon: "💠", tagline: "More room to grow", ram: "2 GB", cpu: "1 vCore", storage: "10 GB", price: "₹65" },
-  { name: "Pro", icon: "💠", tagline: "Priority performance", ram: "3 GB", cpu: "2 vCores", storage: "15 GB", price: "₹100", popular: true },
-  { name: "Ultimate", icon: "🔥", tagline: "Maximum performance & priority support", ram: "4 GB", cpu: "2 vCores", storage: "25 GB", price: "₹150" },
+  { name: "Starter", icon: "🤖", tagline: "Affordable start for small bots", ram: "1 GB", cpu: "1 vCore", storage: "5 GB", price: "₹35", image: serverRack },
+  { name: "Basic", icon: "⚙️", tagline: "More room to grow", ram: "2 GB", cpu: "1 vCore", storage: "10 GB", price: "₹65", image: serverRack },
+  { name: "Pro", icon: "🚀", tagline: "Priority performance", ram: "3 GB", cpu: "2 vCores", storage: "15 GB", price: "₹100", popular: true, image: serverRack },
+  { name: "Ultimate", icon: "👑", tagline: "Maximum performance & priority support", ram: "4 GB", cpu: "2 vCores", storage: "25 GB", price: "₹150", image: serverRack },
 ];
 
 const BotHosting = () => (
