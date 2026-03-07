@@ -3,12 +3,16 @@ import PlanCard from "@/components/PlanCard";
 import PageHeroBanner from "@/components/PageHeroBanner";
 import botBanner from "@/assets/bot-banner.jpg";
 import serverRack from "@/assets/server-rack.jpg";
+import botStarter from "@/assets/plans/bot-starter.png";
+import botBasic from "@/assets/plans/bot-basic.png";
+import botPro from "@/assets/plans/bot-pro.png";
+import botUltimate from "@/assets/plans/bot-ultimate.png";
 
 const plans = [
-  { name: "Starter", icon: "🤖", tagline: "Affordable start for small bots", ram: "1 GB", cpu: "1 vCore", storage: "5 GB", price: "₹35", image: serverRack },
-  { name: "Basic", icon: "⚙️", tagline: "More room to grow", ram: "2 GB", cpu: "1 vCore", storage: "10 GB", price: "₹65", image: serverRack },
-  { name: "Pro", icon: "🚀", tagline: "Priority performance", ram: "3 GB", cpu: "2 vCores", storage: "15 GB", price: "₹100", popular: true, image: serverRack },
-  { name: "Ultimate", icon: "👑", tagline: "Maximum performance & priority support", ram: "4 GB", cpu: "2 vCores", storage: "25 GB", price: "₹150", image: serverRack },
+  { name: "Starter", iconImg: botStarter, tagline: "Affordable start for small bots", ram: "1 GB", cpu: "1 vCore", storage: "5 GB", price: "₹35", image: serverRack },
+  { name: "Basic", iconImg: botBasic, tagline: "More room to grow", ram: "2 GB", cpu: "1 vCore", storage: "10 GB", price: "₹65", image: serverRack },
+  { name: "Pro", iconImg: botPro, tagline: "Priority performance", ram: "3 GB", cpu: "2 vCores", storage: "15 GB", price: "₹100", popular: true, image: serverRack },
+  { name: "Ultimate", iconImg: botUltimate, tagline: "Maximum performance & priority support", ram: "4 GB", cpu: "2 vCores", storage: "25 GB", price: "₹150", image: serverRack },
 ];
 
 const BotHosting = () => (
@@ -27,7 +31,7 @@ const BotHosting = () => (
       </div>
 
       <div className="mt-12 text-center glass-panel p-8 max-w-2xl mx-auto">
-        <h3 className="font-display font-bold text-foreground text-xl mb-2">🎟️ Ready to get started?</h3>
+        <h3 className="font-display font-bold text-foreground text-xl mb-2">Ready to get started?</h3>
         <p className="text-muted-foreground text-sm mb-4">Open a ticket on Discord to purchase your plan. Fast setup, reliable hosting.</p>
         <a
           href="https://discord.gg/9Dhjwy3g"

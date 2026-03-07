@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
+import cloudflareLogo from "@/assets/logos/cloudflare.png";
+import oracleLogo from "@/assets/logos/oracle.png";
+import awsLogo from "@/assets/logos/aws.png";
+import intelLogo from "@/assets/logos/intel.png";
+import amdLogo from "@/assets/logos/amd.png";
+import nvidiaLogo from "@/assets/logos/nvidia.png";
+import vultrLogo from "@/assets/logos/vultr.png";
+import hetznerLogo from "@/assets/logos/hetzner.png";
 
 const brands = [
-  { name: "Cloudflare", icon: "☁️" },
-  { name: "Oracle", icon: "🔴" },
-  { name: "AWS", icon: "🟠" },
-  { name: "Intel", icon: "🔷" },
-  { name: "AMD", icon: "🟩" },
-  { name: "NVIDIA", icon: "💚" },
-  { name: "Vultr", icon: "🌐" },
-  { name: "Hetzner", icon: "🏢" },
+  { name: "Cloudflare", logo: cloudflareLogo },
+  { name: "Oracle", logo: oracleLogo },
+  { name: "AWS", logo: awsLogo },
+  { name: "Intel", logo: intelLogo },
+  { name: "AMD", logo: amdLogo },
+  { name: "NVIDIA", logo: nvidiaLogo },
+  { name: "Vultr", logo: vultrLogo },
+  { name: "Hetzner", logo: hetznerLogo },
 ];
 
 const BrandLogos = () => (
@@ -21,7 +29,7 @@ const BrandLogos = () => (
     >
       Powered by industry-leading technology
     </motion.p>
-    <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
       {brands.map((b, i) => (
         <motion.div
           key={b.name}
@@ -31,12 +39,11 @@ const BrandLogos = () => (
           transition={{ delay: i * 0.08, duration: 0.4 }}
           className="flex flex-col items-center gap-2 group"
         >
-          <span className="text-2xl md:text-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-            {b.icon}
-          </span>
-          <span className="text-[10px] text-muted-foreground font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {b.name}
-          </span>
+          <img
+            src={b.logo}
+            alt={b.name}
+            className="h-10 md:h-12 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0"
+          />
         </motion.div>
       ))}
     </div>
