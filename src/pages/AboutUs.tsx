@@ -31,8 +31,8 @@ const founders = [
 ];
 
 const stats = [
-  { label: "Servers Deployed", value: "500+" },
-  { label: "Happy Customers", value: "200+" },
+  { label: "Servers Deployed", value: "50+" },
+  { label: "Happy Customers", value: "20+" },
   { label: "Uptime", value: "99.9%" },
   { label: "Global Locations", value: "3" },
 ];
