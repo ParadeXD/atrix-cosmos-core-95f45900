@@ -104,7 +104,7 @@ const CustomCursor = () => {
       ripples.current = ripples.current.filter((r) => r.age < 1);
       for (const r of ripples.current) {
         r.age += 0.05;
-        const radius = r.maxRadius * r.age;
+        const radius = Math.max(0, r.maxRadius * r.age);
         const opacity = (1 - r.age) * 0.5;
         ctx.beginPath();
         ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
