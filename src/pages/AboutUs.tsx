@@ -40,7 +40,7 @@ const stats = [
 const AboutUs = () => (
   <Layout>
     <section className="max-w-5xl mx-auto px-6 py-16">
-      <SectionHeading title="About Atrix EB" suEBe="The team behind your digital infrastructure." />
+      <SectionHeading title="About EB Nodes" subtitle="The team behind your digital infrastructure." />
 
       {/* Mission */}
       <motion.div
