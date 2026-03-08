@@ -63,9 +63,9 @@ const SidebarNav = () => {
             {/* Header */}
             <div className="p-5 flex items-center justify-between border-b border-border">
               <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
-                <img src={logo} alt="Atrix Nodes" className="w-9 h-9 rounded-xl" />
+                <img src={logo} alt="EB Nodes" className="w-9 h-9 rounded-xl" />
                 <div>
-                  <span className="font-display font-bold text-foreground text-sm tracking-wide block">ATRIX NODES</span>
+                  <span className="font-display font-bold text-foreground text-sm tracking-wide block">EB NODES</span>
                   <span className="text-[10px] text-muted-foreground">Powering Your Digital Universe</span>
                 </div>
               </Link>
