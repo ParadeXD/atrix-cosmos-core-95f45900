@@ -10,7 +10,7 @@ const founders = [
     icon: Crown,
     color: "text-amber-400",
     bgColor: "bg-amber-400/10",
-    description: "Visionary leader behind EBdes. Passionate about building affordable, high-performance hosting infrastructure for the gaming community.",
+    description: "Visionary leader behind EB. Passionate about building affordable, high-performance hosting infrastructure for the gaming community.",
   },
   {
     name: "Beast",
@@ -26,7 +26,7 @@ const founders = [
     icon: Shield,
     color: "text-cyan-400",
     bgColor: "bg-cyan-400/10",
-    description: "Leading AtrEBdes forward with strategic vision and operational excellence. Committed to delivering world-class hosting experiences.",
+    description: "Leading AtrEBdEBrward with strategic vision and operational excellence. Committed to delivering world-class hosting experiences.",
   },
 ];
 
@@ -40,7 +40,7 @@ const stats = [
 const AboutUs = () => (
   <Layout>
     <section className="max-w-5xl mx-auto px-6 py-16">
-      <SectionHeading title="About Atrix Nodes" subtitle="The team behind your digital infrastructure." />
+      <SectionHeading title="About Atrix EB" subtitle="The team behind your digital infrastructure." />
 
       {/* Mission */}
       <motion.div
