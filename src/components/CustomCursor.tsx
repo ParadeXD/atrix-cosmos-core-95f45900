@@ -17,6 +17,9 @@ interface Ripple {
   maxRadius: number;
 }
 
+const MAX_SPARKS = 60;
+const MAX_RIPPLES = 4;
+
 const CustomCursor = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouse = useRef({ x: -100, y: -100 });
@@ -63,40 +66,34 @@ const CustomCursor = () => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      // Spawn sparks on movement
-      for (let i = 0; i < 2; i++) {
+      if (sparks.current.length < MAX_SPARKS) {
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 3 + 1;
+        const speed = Math.random() * 2 + 0.5;
         sparks.current.push({
-          x: e.clientX + (Math.random() - 0.5) * 6,
-          y: e.clientY + (Math.random() - 0.5) * 6,
+          x: e.clientX + (Math.random() - 0.5) * 4,
+          y: e.clientY + (Math.random() - 0.5) * 4,
           age: 0,
           vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed - 1,
-          size: Math.random() * 2 + 0.5,
+          vy: Math.sin(angle) * speed - 0.5,
+          size: Math.random() * 1.5 + 0.5,
           twinkle: Math.random() * Math.PI * 2,
         });
       }
     };
 
     const onClick = (e: MouseEvent) => {
-      ripples.current.push({
-        x: e.clientX,
-        y: e.clientY,
-        age: 0,
-        maxRadius: 45,
-      });
-      // Spark burst on click
-      for (let i = 0; i < 16; i++) {
-        const angle = (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.3;
-        const speed = 3 + Math.random() * 4;
+      if (ripples.current.length < MAX_RIPPLES) {
+        ripples.current.push({ x: e.clientX, y: e.clientY, age: 0, maxRadius: 40 });
+      }
+      const count = Math.min(10, MAX_SPARKS - sparks.current.length);
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.3;
+        const speed = 2 + Math.random() * 3;
         sparks.current.push({
-          x: e.clientX,
-          y: e.clientY,
-          age: 0,
+          x: e.clientX, y: e.clientY, age: 0,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          size: Math.random() * 2.5 + 1,
+          size: Math.random() * 2 + 0.5,
           twinkle: Math.random() * Math.PI * 2,
         });
       }
@@ -109,75 +106,56 @@ const CustomCursor = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const colors = getColors();
 
-      // Draw ripples
+      // Ripples
       ripples.current = ripples.current.filter((r) => r.age < 1);
       for (const r of ripples.current) {
         r.age += 0.05;
         const radius = Math.max(0, r.maxRadius * r.age);
-        const opacity = (1 - r.age) * 0.6;
         ctx.beginPath();
         ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${colors.ripple[0]}, ${colors.ripple[1]}, ${colors.ripple[2]}, ${opacity})`;
+        ctx.strokeStyle = `rgba(${colors.ripple[0]},${colors.ripple[1]},${colors.ripple[2]},${(1 - r.age) * 0.5})`;
         ctx.lineWidth = 1.5 * (1 - r.age);
         ctx.stroke();
       }
 
-      // Update & draw sparks
+      // Sparks — simple dots, no gradients per spark
       sparks.current = sparks.current.filter((s) => s.age < 1);
       for (const s of sparks.current) {
-        s.age += 0.03;
+        s.age += 0.04;
         s.x += s.vx;
         s.y += s.vy;
-        s.vy += 0.08; // gravity pulls sparks down
-        s.vx *= 0.97; // friction
+        s.vy += 0.06;
+        s.vx *= 0.97;
         s.twinkle += 0.4;
 
         const life = 1 - s.age;
-        const twinkleFactor = 0.5 + 0.5 * Math.sin(s.twinkle);
-        const sz = Math.max(0, s.size * life * twinkleFactor);
+        const tw = 0.5 + 0.5 * Math.sin(s.twinkle);
+        const sz = Math.max(0.1, s.size * life * tw);
+        const c = s.age < 0.3 ? colors.sparkCore : s.age < 0.6 ? colors.sparkMid : colors.sparkOuter;
+        const alpha = life * 0.8 * tw;
 
-        // Color transition: bright core → mid → outer
-        const c = s.age < 0.3
-          ? colors.sparkCore
-          : s.age < 0.6
-          ? colors.sparkMid
-          : colors.sparkOuter;
-
-        const alpha = life * 0.8 * twinkleFactor;
-
-        // Draw spark glow
-        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, Math.max(0.1, sz * 3));
-        grad.addColorStop(0, `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${alpha * 0.4})`);
-        grad.addColorStop(1, `rgba(${c[0]}, ${c[1]}, ${c[2]}, 0)`);
         ctx.beginPath();
-        ctx.arc(s.x, s.y, Math.max(0.1, sz * 3), 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-
-        // Draw spark core (tiny bright dot)
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, Math.max(0.1, sz), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${alpha})`;
+        ctx.arc(s.x, s.y, sz, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${alpha})`;
         ctx.fill();
       }
 
-      // Draw main cursor dot
+      // Cursor dot
       ctx.beginPath();
       ctx.arc(mouse.current.x, mouse.current.y, 4, 0, Math.PI * 2);
       ctx.fillStyle = colors.dot;
       ctx.fill();
 
-      // Blue glow around cursor dot
+      // Simple glow (one gradient, always same size)
+      const g = colors.glow;
       const grad = ctx.createRadialGradient(
         mouse.current.x, mouse.current.y, 0,
-        mouse.current.x, mouse.current.y, 18
+        mouse.current.x, mouse.current.y, 14
       );
-      const g = colors.glow;
-      grad.addColorStop(0, `rgba(${g[0]}, ${g[1]}, ${g[2]}, 0.35)`);
-      grad.addColorStop(0.5, `rgba(${g[0]}, ${g[1]}, ${g[2]}, 0.1)`);
-      grad.addColorStop(1, `rgba(${g[0]}, ${g[1]}, ${g[2]}, 0)`);
+      grad.addColorStop(0, `rgba(${g[0]},${g[1]},${g[2]},0.3)`);
+      grad.addColorStop(1, `rgba(${g[0]},${g[1]},${g[2]},0)`);
       ctx.beginPath();
-      ctx.arc(mouse.current.x, mouse.current.y, 18, 0, Math.PI * 2);
+      ctx.arc(mouse.current.x, mouse.current.y, 14, 0, Math.PI * 2);
       ctx.fillStyle = grad;
       ctx.fill();
 
