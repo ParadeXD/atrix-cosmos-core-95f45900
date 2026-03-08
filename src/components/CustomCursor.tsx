@@ -28,10 +28,10 @@ const CustomCursor = () => {
     if (isLight) {
       return {
         dot: "rgba(30, 30, 30, 0.9)",
-        flameCore: [30, 30, 30] as [number, number, number],
-        flameMid: [80, 80, 80] as [number, number, number],
-        flameOuter: [120, 120, 120] as [number, number, number],
-        ripple: [30, 30, 30] as [number, number, number],
+        flameCore: [60, 130, 255] as [number, number, number],
+        flameMid: [30, 90, 200] as [number, number, number],
+        flameOuter: [20, 60, 150] as [number, number, number],
+        ripple: [60, 130, 255] as [number, number, number],
       };
     }
     return {
