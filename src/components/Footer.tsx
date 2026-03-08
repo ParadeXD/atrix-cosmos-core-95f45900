@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-10 pt-6 text-center">
-          <p className="text-xs text-muted-foreground">© 2026 Atrix Nodes. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© 2026 EB Nodes. All rights reserved.</p>
         </div>
       </div>
     </footer>

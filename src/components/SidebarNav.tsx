@@ -127,7 +127,7 @@ const SidebarNav = () => {
 
             {/* Footer */}
             <div className="p-4 border-t border-border">
-              <p className="text-[10px] text-muted-foreground text-center">© 2026 Atrix Nodes</p>
+              <p className="text-[10px] text-muted-foreground text-center">© 2026 EB Nodes</p>
             </div>
           </motion.aside>
         )}
