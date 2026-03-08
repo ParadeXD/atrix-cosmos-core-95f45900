@@ -3,6 +3,7 @@ import SidebarNav from "./SidebarNav";
 import Footer from "./Footer";
 import ParticleField from "./ParticleField";
 import ThemeToggle from "./ThemeToggle";
+import CustomCursor from "./CustomCursor";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen bg-background relative">
