@@ -29,8 +29,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="Atrix Nodes" className="w-8 h-8 rounded-lg" />
-              <span className="font-display font-bold text-foreground tracking-wide text-sm">ATRIX NODES</span>
+              <img src={logo} alt="EB Nodes" className="w-8 h-8 rounded-lg" />
+              <span className="font-display font-bold text-foreground tracking-wide text-sm">EB NODES</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">Your game, your server, your rules. High-performance hosting for everyone.</p>
             <div className="flex gap-3">
@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-10 pt-6 text-center">
-          <p className="text-xs text-muted-foreground">© 2026 Atrix Nodes. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© 2026 EB Nodes. All rights reserved.</p>
         </div>
       </div>
     </footer>

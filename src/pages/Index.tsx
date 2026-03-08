@@ -243,7 +243,7 @@ const Index = () => {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <SectionHeading title="Why Atrix Nodes?" subtitle="Built for performance, designed for reliability." />
+        <SectionHeading title="Why EB Nodes?" subtitle="Built for performance, designed for reliability." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <FeatureCard key={f.title} {...f} index={i} />

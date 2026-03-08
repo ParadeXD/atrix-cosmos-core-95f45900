@@ -10,7 +10,7 @@ const founders = [
     icon: Crown,
     color: "text-amber-400",
     bgColor: "bg-amber-400/10",
-    description: "Visionary leader behind Atrix Nodes. Passionate about building affordable, high-performance hosting infrastructure for the gaming community.",
+    description: "Visionary leader behind EBassionate about building affordable, high-performance hosting infrastructure for the gaming community.",
   },
   {
     name: "Beast",
@@ -26,7 +26,7 @@ const founders = [
     icon: Shield,
     color: "text-cyan-400",
     bgColor: "bg-cyan-400/10",
-    description: "Leading Atrix Nodes forward with strategic vision and operational excellence. Committed to delivering world-class hosting experiences.",
+    description: "Leading AtrEBdEBrEBwith strategic vision and operational excellence. Committed to delivering world-class hosting experiences.",
   },
 ];
 
@@ -40,7 +40,7 @@ const stats = [
 const AboutUs = () => (
   <Layout>
     <section className="max-w-5xl mx-auto px-6 py-16">
-      <SectionHeading title="About Atrix Nodes" subtitle="The team behind your digital infrastructure." />
+      <SectionHeading title="About EB Nodes" subtitle="The team behind your digital infrastructure." />
 
       {/* Mission */}
       <motion.div
@@ -52,7 +52,7 @@ const AboutUs = () => (
         <Globe className="w-10 h-10 text-primary mx-auto mb-4" />
         <h3 className="font-display font-bold text-foreground text-xl mb-3">Our Mission</h3>
         <p className="text-muted-foreground leading-relaxed">
-          At Atrix Nodes, we believe powerful hosting shouldn't break the bank. We provide enterprise-grade
+          At EB Nodes, we believe powerful hosting shouldn't break the bank. We provide enterprise-grade
           infrastructure at prices that empower creators, gamers, and developers to build without limits.
           From Minecraft servers to full VPS solutions, we're here to power your digital universe.
         </p>

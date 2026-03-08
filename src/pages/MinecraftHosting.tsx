@@ -51,7 +51,7 @@ const MinecraftHosting = () => (
       </div>
 
       <div className="mt-16 max-w-3xl mx-auto">
-        <SectionHeading title="Why Atrix Nodes for Minecraft?" />
+        <SectionHeading title="Why EB Nodes for Minecraft?" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             "Instant Setup", "Full Pterodactyl Panel Access", "Latest Minecraft Versions",
