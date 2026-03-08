@@ -34,7 +34,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
         {/* Revolving logo */}
         <motion.img
           src={logo}
-          alt="EB Nodes"
+          alt="EBdes"
           className="w-24 h-24 rounded-2xl relative z-10"
           animate={{ rotateY: [0, 360] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -48,7 +48,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-6 font-display font-bold text-foreground tracking-widest text-sm"
         >
-          ATRIX NODES
+          ATREBDES
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
