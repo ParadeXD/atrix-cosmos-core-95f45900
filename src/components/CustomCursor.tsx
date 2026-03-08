@@ -123,7 +123,7 @@ const CustomCursor = () => {
         t.vx *= 0.98;
 
         const life = 1 - t.age;
-        const s = t.size * life;
+        const s = Math.max(0, t.size * life);
         const r = t.age < 0.3
           ? colors.flameCore
           : t.age < 0.6
