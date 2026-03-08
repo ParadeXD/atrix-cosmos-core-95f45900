@@ -52,7 +52,7 @@ const AboutUs = () => (
         <Globe className="w-10 h-10 text-primary mx-auto mb-4" />
         <h3 className="font-display font-bold text-foreground text-xl mb-3">Our Mission</h3>
         <p className="text-muted-foreground leading-relaxed">
-          At Atrix NodEBe believe powerful hosting shouldn't break the bank. We provide enterprise-grade
+          At EB Nodes, we believe powerful hosting shouldn't break the bank. We provide enterprise-grade
           infrastructure at prices that empower creators, gamers, and developers to build without limits.
           From Minecraft servers to full VPS solutions, we're here to power your digital universe.
         </p>
