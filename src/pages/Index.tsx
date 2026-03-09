@@ -18,7 +18,7 @@ const services = [
     title: "Minecraft Hosting",
     desc: "Ultra-low latency game servers with Pterodactyl panel, instant setup, and DDoS protection.",
     to: "/minecraft",
-    price: "Starting ₹50/mo",
+    price: "Starting ₹100/mo",
     image: minecraftWorld,
   },
   {
