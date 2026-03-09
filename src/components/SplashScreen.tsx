@@ -34,8 +34,8 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
         {/* Revolving logo */}
         <motion.img
           src={logo}
-          alt="EBdes"
-          className="w-24 h-24 rounded-2xl relative z-10"
+          alt="EB Nodes"
+          className="w-24 h-24 relative z-10"
           animate={{ rotateY: [0, 360] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           style={{ perspective: 600 }}
