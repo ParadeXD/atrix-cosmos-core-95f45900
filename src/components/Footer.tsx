@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Gamepad2, Server, Bot, Mail, Globe, Shield, ExternalLink, MessageSquare } from "lucide-react";
-import logo from "@/assets/atrix-logo.webp";
+import logo from "@/assets/eb-nodes-logo.png";
 
 const Footer = () => {
   const [istTime, setIstTime] = useState("");
