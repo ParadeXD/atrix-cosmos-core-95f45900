@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoreVertical, X, Home, Gamepad2, Server, Bot, Users, Activity, ExternalLink, MessageSquare } from "lucide-react";
-import logo from "@/assets/atrix-logo.webp";
+import logo from "@/assets/eb-nodes-logo.png";
 
 const navItems = [
   { label: "Home", to: "/", icon: Home },
