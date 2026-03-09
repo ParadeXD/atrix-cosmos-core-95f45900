@@ -26,7 +26,7 @@ const services = [
     title: "VPS Hosting",
     desc: "Dedicated Intel Xeon resources, full root access, NVMe SSD, and easy scalability.",
     to: "/vps",
-    price: "Starting ₹250/mo",
+    price: "Starting ₹599/mo",
     image: vpsNetwork,
   },
   {

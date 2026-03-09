@@ -67,6 +67,15 @@ const Footer = () => {
               <Link to="/about" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Mail className="w-3 h-3" /> About Us
               </Link>
+              <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Terms of Service
+              </Link>
+              <Link to="/refund-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Refund Policy
+              </Link>
+              <Link to="/payment-methods" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Payment Methods
+              </Link>
               <a href="https://uptime.atrixnodes.in" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Status
               </a>

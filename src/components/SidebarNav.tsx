@@ -4,12 +4,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MoreVertical, X, Home, Gamepad2, Server, Bot, Users, Activity, ExternalLink, MessageSquare } from "lucide-react";
 import logo from "@/assets/eb-nodes-logo.png";
 
+import { FileText, CreditCard, Cpu } from "lucide-react";
+
 const navItems = [
   { label: "Home", to: "/", icon: Home },
   { label: "Minecraft Hosting", to: "/minecraft", icon: Gamepad2 },
   { label: "VPS Hosting", to: "/vps", icon: Server },
+  { label: "AMD VPS", to: "/amd-vps", icon: Cpu },
   { label: "Bot Hosting", to: "/bot-hosting", icon: Bot },
   { label: "About Us", to: "/about", icon: Users },
+  { label: "Payment Methods", to: "/payment-methods", icon: CreditCard },
+  { label: "Terms of Service", to: "/terms", icon: FileText },
+  { label: "Refund Policy", to: "/refund-policy", icon: FileText },
 ];
 
 const externalItems = [
