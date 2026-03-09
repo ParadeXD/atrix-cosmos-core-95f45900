@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Gamepad2, Server, Bot, Mail, Globe, Shield, ExternalLink, MessageSquare } from "lucide-react";
-import logo from "@/assets/atrix-logo.webp";
+import logo from "@/assets/eb-nodes-logo.png";
 
 const Footer = () => {
   const [istTime, setIstTime] = useState("");
@@ -66,6 +66,15 @@ const Footer = () => {
             <div className="flex flex-col gap-2.5">
               <Link to="/about" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Mail className="w-3 h-3" /> About Us
+              </Link>
+              <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Terms of Service
+              </Link>
+              <Link to="/refund-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Refund Policy
+              </Link>
+              <Link to="/payment-methods" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> Payment Methods
               </Link>
               <a href="https://uptime.atrixnodes.in" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Status

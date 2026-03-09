@@ -18,7 +18,7 @@ const services = [
     title: "Minecraft Hosting",
     desc: "Ultra-low latency game servers with Pterodactyl panel, instant setup, and DDoS protection.",
     to: "/minecraft",
-    price: "Starting ₹50/mo",
+    price: "Starting ₹100/mo",
     image: minecraftWorld,
   },
   {
@@ -26,7 +26,7 @@ const services = [
     title: "VPS Hosting",
     desc: "Dedicated Intel Xeon resources, full root access, NVMe SSD, and easy scalability.",
     to: "/vps",
-    price: "Starting ₹250/mo",
+    price: "Starting ₹599/mo",
     image: vpsNetwork,
   },
   {
