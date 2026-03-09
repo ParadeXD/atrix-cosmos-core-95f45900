@@ -48,7 +48,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-6 font-display font-bold text-foreground tracking-widest text-sm"
         >
-          ATREBDES
+          EB NODES
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
