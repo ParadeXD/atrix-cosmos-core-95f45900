@@ -4,7 +4,7 @@ import { Zap, Shield, Globe, Gamepad2, Server, Bot, ChevronRight, Check } from "
 import Layout from "@/components/Layout";
 import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
-import GlobalMap from "@/components/GlobalMap";
+import { MapPin, Wifi, Clock, Server as ServerIcon } from "lucide-react";
 import BrandLogos from "@/components/BrandLogos";
 import DiscordBanner from "@/components/DiscordBanner";
 import heroBg from "@/assets/hero-bg.jpg";
