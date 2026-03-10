@@ -4,7 +4,7 @@ import { Zap, Shield, Globe, Gamepad2, Server, Bot, ChevronRight, Check } from "
 import Layout from "@/components/Layout";
 import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
-import GlobalMap from "@/components/GlobalMap";
+import { MapPin, Wifi, Clock, Server as ServerIcon } from "lucide-react";
 import BrandLogos from "@/components/BrandLogos";
 import DiscordBanner from "@/components/DiscordBanner";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -251,10 +251,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Global Map */}
+      {/* Global Locations */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <SectionHeading title="Global Server Locations" subtitle="Low ping. High uptime. Worldwide performance." />
-        <GlobalMap />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+          {[
+            { name: "India", city: "Mumbai", flag: "🇮🇳", ping: "12ms", uptime: "99.98%", nodes: 4 },
+            { name: "United States", city: "Dallas", flag: "🇺🇸", ping: "45ms", uptime: "99.95%", nodes: 2 },
+            { name: "Singapore", city: "Singapore", flag: "🇸🇬", ping: "28ms", uptime: "99.99%", nodes: 3 },
+          ].map((loc, i) => (
+            <motion.div
+              key={loc.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="glass-panel p-6 group hover:shadow-glow hover:border-primary/20 transition-all duration-500"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">{loc.flag}</span>
+                <div>
+                  <h3 className="font-display font-bold text-foreground group-hover:text-primary transition-colors">{loc.city}</h3>
+                  <p className="text-xs text-muted-foreground">{loc.name}</p>
+                </div>
+                <span className="ml-auto flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs text-emerald-400 font-medium">Live</span>
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground"><Wifi className="w-3.5 h-3.5 text-cyan-400" /> Latency</span>
+                  <span className="text-sm font-mono font-bold text-cyan-400">{loc.ping}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="w-3.5 h-3.5 text-emerald-400" /> Uptime</span>
+                  <span className="text-sm font-mono font-bold text-emerald-400">{loc.uptime}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground"><ServerIcon className="w-3.5 h-3.5 text-violet-400" /> Nodes</span>
+                  <span className="text-sm font-mono font-bold text-violet-400">{loc.nodes} active</span>
+                </div>
+              </div>
+              <div className="mt-4 pt-3 border-t border-border/30">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[10px] text-muted-foreground">Network Quality</span>
+                  <span className="text-[10px] font-medium text-emerald-400">Excellent</span>
+                </div>
+                <div className="w-full h-1.5 rounded-full bg-secondary overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "95%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.3 + i * 0.2 }}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Discord Banner */}
