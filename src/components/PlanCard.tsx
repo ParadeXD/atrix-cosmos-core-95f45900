@@ -78,7 +78,7 @@ const PlanCard = ({
         </div>
 
         <a
-          href="https://discord.gg/9Dhjwy3g"
+          href="https://discord.com/invite/WWtU88AHfd"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 block text-center py-2.5 rounded-xl bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-all duration-300"

@@ -91,7 +91,7 @@ const Footer = () => {
               <a href="https://gp.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Game Panel
               </a>
-              <a href="https://discord.gg/9Dhjwy3g" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://discord.com/invite/WWtU88AHfd" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Discord
               </a>
             </div>

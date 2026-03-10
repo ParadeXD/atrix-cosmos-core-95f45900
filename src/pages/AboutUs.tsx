@@ -118,7 +118,7 @@ const AboutUs = () => (
             </p>
           </div>
           <a
-            href="https://discord.gg/9Dhjwy3g"
+            href="https://discord.com/invite/WWtU88AHfd"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-display font-semibold px-8 py-3.5 rounded-2xl text-sm transition-all duration-300 flex-shrink-0"

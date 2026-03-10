@@ -34,7 +34,7 @@ const BotHosting = () => (
         <h3 className="font-display font-bold text-foreground text-xl mb-2">Ready to get started?</h3>
         <p className="text-muted-foreground text-sm mb-4">Open a ticket on Discord to purchase your plan. Fast setup, reliable hosting.</p>
         <a
-          href="https://discord.gg/9Dhjwy3g"
+          href="https://discord.com/invite/WWtU88AHfd"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block glow-button bg-primary text-primary-foreground font-display font-semibold px-8 py-3 rounded-2xl text-sm"

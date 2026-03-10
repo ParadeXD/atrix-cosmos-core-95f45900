@@ -21,7 +21,7 @@ const navItems = [
 const externalItems = [
   { label: "Uptime Status", href: "https://status.ebnodes.cloud", icon: Activity },
   { label: "Game Panel", href: "https://gp.ebnodes.cloud", icon: ExternalLink },
-  { label: "Discord", href: "https://discord.gg/9Dhjwy3g", icon: MessageSquare },
+  { label: "Discord", href: "https://discord.com/invite/WWtU88AHfd", icon: MessageSquare },
 ];
 
 const SidebarNav = () => {
