@@ -76,7 +76,7 @@ const Footer = () => {
               <Link to="/payment-methods" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Payment Methods
               </Link>
-              <a href="https://uptime.atrixnodes.in" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+              <a href="https://status.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Status
               </a>
             </div>
