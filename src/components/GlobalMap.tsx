@@ -1,41 +1,38 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Wifi, Clock, Server } from "lucide-react";
+import { Wifi, Clock, Server } from "lucide-react";
 import mapBg from "@/assets/global-map-new.avif";
 
 const locations = [
   {
     name: "India",
     flag: "🇮🇳",
-    x: 65,
-    y: 42,
+    x: 68.5,
+    y: 38,
     city: "Mumbai",
     ping: "12ms",
     uptime: "99.98%",
     servers: 4,
-    status: "Operational",
   },
   {
     name: "United States",
     flag: "🇺🇸",
-    x: 20,
-    y: 32,
+    x: 17,
+    y: 33,
     city: "Dallas",
     ping: "45ms",
     uptime: "99.95%",
     servers: 2,
-    status: "Operational",
   },
   {
     name: "Singapore",
     flag: "🇸🇬",
-    x: 75.5,
-    y: 55,
+    x: 77,
+    y: 56,
     city: "Singapore",
     ping: "28ms",
     uptime: "99.99%",
     servers: 3,
-    status: "Operational",
   },
 ];
 
@@ -45,27 +42,22 @@ const GlobalMap = () => {
   return (
     <div className="relative w-full max-w-6xl mx-auto">
       <div className="relative overflow-hidden">
-        {/* Map image background - blended with page */}
         <div className="relative aspect-[2.2/1] w-full">
           <img
             src={mapBg}
             alt="Global server locations"
             className="w-full h-full object-contain opacity-40"
           />
-
-          {/* Edge fade to blend with background */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
 
-          {/* Connection lines SVG overlay */}
           <svg
             viewBox="0 0 1000 455"
             className="absolute inset-0 w-full h-full pointer-events-none"
             preserveAspectRatio="xMidYMid slice"
           >
-            {/* Animated connection arcs */}
             <motion.path
-              d="M200,145 Q440,80 650,191"
+              d="M170,150 Q440,80 685,173"
               fill="none"
               stroke="hsl(200 100% 50% / 0.15)"
               strokeWidth="1"
@@ -76,7 +68,7 @@ const GlobalMap = () => {
               transition={{ duration: 2.5, delay: 0.5 }}
             />
             <motion.path
-              d="M650,191 Q720,210 755,250"
+              d="M685,173 Q730,210 770,255"
               fill="none"
               stroke="hsl(200 100% 50% / 0.15)"
               strokeWidth="1"
@@ -87,7 +79,7 @@ const GlobalMap = () => {
               transition={{ duration: 2, delay: 1.2 }}
             />
             <motion.path
-              d="M200,145 Q500,300 755,250"
+              d="M170,150 Q500,300 770,255"
               fill="none"
               stroke="hsl(200 100% 50% / 0.1)"
               strokeWidth="1"
@@ -99,7 +91,6 @@ const GlobalMap = () => {
             />
           </svg>
 
-          {/* Location markers */}
           {locations.map((loc, i) => (
             <motion.div
               key={loc.name}
@@ -110,27 +101,23 @@ const GlobalMap = () => {
               className="absolute z-10"
               style={{ left: `${loc.x}%`, top: `${loc.y}%`, transform: "translate(-50%, -50%)" }}
             >
-              {/* Outer pulse ring */}
               <motion.div
                 className="absolute -inset-4 rounded-full border border-cyan-400/30"
                 animate={{ scale: [1, 2.2, 1], opacity: [0.6, 0, 0.6] }}
                 transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.7 }}
               />
-              {/* Inner pulse */}
               <motion.div
                 className="absolute -inset-2 rounded-full bg-cyan-400/10"
                 animate={{ scale: [1, 1.6, 1], opacity: [0.4, 0, 0.4] }}
                 transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
               />
 
-              {/* Clickable dot */}
               <button
                 onClick={() => setActive(active === loc.name ? null : loc.name)}
                 className="relative w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_3px_rgba(34,211,238,0.5)] cursor-pointer hover:scale-150 transition-transform duration-300 z-20"
                 aria-label={`View ${loc.city} server info`}
               />
 
-              {/* Info card popover */}
               <AnimatePresence>
                 {active === loc.name && (
                   <motion.div
@@ -140,8 +127,7 @@ const GlobalMap = () => {
                     transition={{ duration: 0.25, ease: "easeOut" }}
                     className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-30 w-56"
                   >
-                    <div className="bg-[hsl(220,20%,8%)] border border-border/50 backdrop-blur-2xl rounded-xl p-4 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]">
-                      {/* Header */}
+                    <div className="bg-card border border-border/50 backdrop-blur-2xl rounded-xl p-4 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]">
                       <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-border/30">
                         <span className="text-xl">{loc.flag}</span>
                         <div>
@@ -153,8 +139,6 @@ const GlobalMap = () => {
                           <span className="text-[10px] text-emerald-400 font-medium">Live</span>
                         </span>
                       </div>
-
-                      {/* Stats */}
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between">
                           <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -175,8 +159,6 @@ const GlobalMap = () => {
                           <span className="text-xs font-mono font-bold text-violet-400">{loc.servers} active</span>
                         </div>
                       </div>
-
-                      {/* Ping bar */}
                       <div className="mt-3 pt-3 border-t border-border/30">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-[10px] text-muted-foreground">Network Quality</span>
@@ -192,9 +174,7 @@ const GlobalMap = () => {
                         </div>
                       </div>
                     </div>
-
-                    {/* Arrow */}
-                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 bg-[hsl(220,20%,8%)] border-r border-b border-border/50 rotate-45" />
+                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 bg-card border-r border-b border-border/50 rotate-45" />
                   </motion.div>
                 )}
               </AnimatePresence>
