@@ -76,7 +76,7 @@ const Footer = () => {
               <Link to="/payment-methods" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Payment Methods
               </Link>
-              <a href="https://uptime.atrixnodes.in" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+              <a href="https://status.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Shield className="w-3 h-3" /> Status
               </a>
             </div>
@@ -88,7 +88,7 @@ const Footer = () => {
               <ExternalLink className="w-3.5 h-3.5 text-primary" /> Quick Links
             </h4>
             <div className="flex flex-col gap-2.5">
-              <a href="https://gp.atrixnodes.in" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://gp.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Game Panel
               </a>
               <a href="https://discord.gg/9Dhjwy3g" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
