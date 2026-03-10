@@ -43,7 +43,7 @@ const MinecraftHosting = () => (
         <h3 className="font-display font-bold text-foreground text-xl mb-2">Customizable Plans Available!</h3>
         <p className="text-muted-foreground text-sm mb-4">Need different RAM, CPU, or storage? We can create a custom plan tailored exactly to your needs!</p>
         <a
-          href="https://discord.gg/9Dhjwy3g"
+          href="https://discord.com/invite/WWtU88AHfd"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block glow-button bg-primary text-primary-foreground font-display font-semibold px-8 py-3 rounded-2xl text-sm"
