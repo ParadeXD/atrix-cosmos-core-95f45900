@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { MoreVertical, X, Home, Gamepad2, Server, Bot, Users, Activity, ExternalLink, MessageSquare } from "lucide-react";
+import { Menu, X, Home, Gamepad2, Server, Bot, Users, Activity, ExternalLink, MessageSquare, ChevronRight } from "lucide-react";
 import logo from "@/assets/eb-nodes-logo.png";
-
 import { FileText, CreditCard, Cpu } from "lucide-react";
 
 const navItems = [
@@ -21,7 +20,7 @@ const navItems = [
 const externalItems = [
   { label: "Uptime Status", href: "https://status.ebnodes.cloud", icon: Activity },
   { label: "Game Panel", href: "https://gp.ebnodes.cloud", icon: ExternalLink },
-  { label: "Discord", href: "https://discord.gg/9Dhjwy3g", icon: MessageSquare },
+  { label: "Discord", href: "https://discord.com/invite/WWtU88AHfd", icon: MessageSquare },
 ];
 
 const SidebarNav = () => {
@@ -30,16 +29,16 @@ const SidebarNav = () => {
 
   return (
     <>
-      {/* Floating trigger button - 3 dots */}
+      {/* Floating trigger button - hamburger */}
       <motion.button
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.4 }}
         onClick={() => setOpen(true)}
-        className="fixed top-5 left-5 z-50 glass-panel p-2.5 rounded-xl hover:bg-glass-hover transition-all duration-300 group"
+        className="fixed top-5 left-5 z-50 glass-panel p-3 rounded-xl hover:bg-glass-hover hover:shadow-glow transition-all duration-300 group"
         aria-label="Open navigation"
       >
-        <MoreVertical className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+        <Menu className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
       </motion.button>
 
       {/* Overlay */}
@@ -60,53 +59,72 @@ const SidebarNav = () => {
       <AnimatePresence>
         {open && (
           <motion.aside
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
+            initial={{ x: "-100%", opacity: 0.5 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0.5 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 h-full w-72 z-[70] glass-panel border-r border-glass-border rounded-none flex flex-col"
+            className="fixed top-0 left-0 h-full w-72 z-[70] bg-card/95 backdrop-blur-2xl border-r border-border rounded-none flex flex-col shadow-[20px_0_60px_-15px_rgba(0,0,0,0.5)]"
           >
             {/* Header */}
             <div className="p-5 flex items-center justify-between border-b border-border">
-              <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
-                <img src={logo} alt="EB Nodes" className="w-9 h-9 rounded-xl" />
+              <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 group">
+                <motion.img
+                  src={logo}
+                  alt="EB Nodes"
+                  className="w-9 h-9"
+                  whileHover={{ rotate: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                />
                 <div>
-                  <span className="font-display font-bold text-foreground text-sm tracking-wide block">EB NODES</span>
+                  <span className="font-display font-bold text-foreground text-sm tracking-wide block group-hover:text-primary transition-colors">EB NODES</span>
                   <span className="text-[10px] text-muted-foreground">Powering Your Digital Universe</span>
                 </div>
               </Link>
-              <button
+              <motion.button
                 onClick={() => setOpen(false)}
+                whileHover={{ rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.2 }}
                 className="p-1.5 rounded-lg hover:bg-secondary transition-colors"
               >
                 <X className="w-4 h-4 text-muted-foreground" />
-              </button>
+              </motion.button>
             </div>
 
             {/* Nav links */}
             <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
               <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2 px-3">Navigation</p>
-              {navItems.map((item, i) => (
-                <motion.div
-                  key={item.to}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 * i + 0.1, duration: 0.3 }}
-                >
-                  <Link
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                      location.pathname === item.to
-                        ? "bg-primary/15 text-primary"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                    }`}
+              {navItems.map((item, i) => {
+                const isActive = location.pathname === item.to;
+                return (
+                  <motion.div
+                    key={item.to}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 * i + 0.1, duration: 0.3 }}
                   >
-                    <item.icon className="w-4 h-4" />
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 group/link relative overflow-hidden ${
+                        isActive
+                          ? "bg-primary/15 text-primary"
+                          : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeIndicator"
+                          className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-primary rounded-full"
+                        />
+                      )}
+                      <item.icon className="w-4 h-4 transition-transform duration-200 group-hover/link:scale-110" />
+                      <span className="flex-1">{item.label}</span>
+                      <ChevronRight className={`w-3 h-3 transition-all duration-200 ${isActive ? "opacity-100 text-primary" : "opacity-0 group-hover/link:opacity-50"}`} />
+                    </Link>
+                  </motion.div>
+                );
+              })}
 
               <div className="pt-4">
                 <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2 px-3">External</p>
@@ -121,10 +139,11 @@ const SidebarNav = () => {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300 group/link"
                     >
-                      <item.icon className="w-4 h-4" />
-                      {item.label}
+                      <item.icon className="w-4 h-4 transition-transform duration-200 group-hover/link:scale-110" />
+                      <span className="flex-1">{item.label}</span>
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-50 transition-opacity duration-200" />
                     </a>
                   </motion.div>
                 ))}

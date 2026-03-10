@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">Your game, your server, your rules. High-performance hosting for everyone.</p>
             <div className="flex gap-3">
-              <a href="https://discord.gg/9Dhjwy3g" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://discord.com/invite/WWtU88AHfd" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <MessageSquare className="w-4 h-4" />
               </a>
             </div>
@@ -91,7 +91,7 @@ const Footer = () => {
               <a href="https://gp.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Game Panel
               </a>
-              <a href="https://discord.gg/9Dhjwy3g" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://discord.com/invite/WWtU88AHfd" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Discord
               </a>
             </div>

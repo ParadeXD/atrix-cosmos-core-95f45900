@@ -127,7 +127,7 @@ const Index = () => {
               Explore Plans
             </Link>
             <a
-              href="https://discord.gg/9Dhjwy3g"
+              href="https://discord.com/invite/WWtU88AHfd"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-panel-hover px-8 py-3.5 rounded-2xl text-sm font-display font-semibold text-foreground"
