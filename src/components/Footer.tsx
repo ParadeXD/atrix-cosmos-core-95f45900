@@ -88,7 +88,7 @@ const Footer = () => {
               <ExternalLink className="w-3.5 h-3.5 text-primary" /> Quick Links
             </h4>
             <div className="flex flex-col gap-2.5">
-              <a href="https://gp.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://gp.ebnodes.in/" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Game Panel
               </a>
               <a href="https://discord.com/invite/WWtU88AHfd" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">

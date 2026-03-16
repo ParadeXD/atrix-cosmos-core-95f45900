@@ -18,8 +18,8 @@ const navItems = [
 ];
 
 const externalItems = [
-  { label: "Uptime Status", href: "https://status.ebnodes.cloud", icon: Activity },
-  { label: "Game Panel", href: "https://gp.ebnodes.cloud", icon: ExternalLink },
+  { label: "Uptime Status", href: "https://believe.ebnodes.in", icon: Activity },
+  { label: "Game Panel", href: "https://gp.ebnodes.in/", icon: ExternalLink },
   { label: "Discord", href: "https://discord.com/invite/WWtU88AHfd", icon: MessageSquare },
 ];
 

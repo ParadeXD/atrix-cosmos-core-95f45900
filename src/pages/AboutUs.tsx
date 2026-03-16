@@ -151,7 +151,7 @@ const AboutUs = () => (
         <div className="glass-panel p-6">
           <h4 className="font-display font-bold text-foreground mb-3">Panels</h4>
           <div className="space-y-2 text-sm">
-            <a href="https://gp.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="flex justify-between text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://gp.ebnodes.in/" target="_blank" rel="noopener noreferrer" className="flex justify-between text-muted-foreground hover:text-foreground transition-colors">
               <span>Game Panel</span><span className="text-primary">→</span>
             </a>
             <div className="flex justify-between text-muted-foreground">
