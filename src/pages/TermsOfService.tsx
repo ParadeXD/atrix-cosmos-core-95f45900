@@ -1,75 +1,85 @@
 import Layout from "@/components/Layout";
 import PageHeroBanner from "@/components/PageHeroBanner";
 import heroBg from "@/assets/hero-bg.jpg";
+import { motion } from "framer-motion";
 
 const sections = [
   {
-    title: "1. General Usage",
+    icon: "📜",
+    title: "1. Acceptable Use",
     items: [
-      "EB Nodes services must only be used for legal purposes.",
-      "No hosting or distributing malware, phishing, DDoS tools, botnets, RATs, stealers, or illegal scripts.",
-      "No CP, gore, or any illegal content of any kind.",
-      "Abuse of resources may lead to suspension without refund.",
+      "All EB Nodes services must be used strictly for lawful purposes.",
+      "Hosting, distributing, or facilitating malware, phishing kits, DDoS tools, botnets, RATs, stealers, or any illegal software is strictly prohibited.",
+      "No illegal content of any kind — including but not limited to CSAM, gore, or extremist material.",
+      "Abuse, misuse, or overuse of allocated resources may result in immediate suspension without refund.",
     ],
   },
   {
-    title: "2. Security & Privacy",
+    icon: "🔒",
+    title: "2. Account Security & Privacy",
     items: [
-      "Do not share your panel login, SSH/SFTP details, or API keys with anyone.",
-      "You are responsible for all activity done on your server.",
-      "Any attempt to breach another user's server is strictly forbidden.",
+      "You are solely responsible for safeguarding your panel credentials, SSH/SFTP keys, and API tokens.",
+      "Do not share login details with unauthorized individuals.",
+      "All activity originating from your account is your responsibility.",
+      "Unauthorized access attempts against any EB Nodes infrastructure or other users' servers will result in permanent termination.",
     ],
   },
   {
-    title: "3. Server Usage",
+    icon: "🖥️",
+    title: "3. Server Resource Usage",
     items: [
-      "No crypto mining, mass scanning, or DDoS attacks using server resources.",
-      "Avoid running high-load processes that affect node performance.",
-      "Public proxies, VPN nodes, or open relays are not allowed unless approved.",
+      "Cryptocurrency mining, network scanning, and DDoS attacks are strictly forbidden.",
+      "Avoid running processes that degrade shared node performance for other users.",
+      "Hosting public VPN endpoints, open proxies, or open mail relays requires prior written approval.",
     ],
   },
   {
+    icon: "🚫",
     title: "4. Prohibited Activities",
     items: [
-      "DDoS attacks or stress testing",
-      "Hosting cracked/pirated content",
-      "Packet sniffing or ARP spoofing",
-      "Spam emails, SMS spam, or mass mailing",
-      "Resource hogging or intentionally crashing nodes",
-      "Hosting misleading or scam sites",
+      "DDoS attacks, stress testing, or traffic amplification of any kind.",
+      "Hosting cracked, pirated, or unlicensed software and media.",
+      "Packet sniffing, ARP spoofing, or man-in-the-middle attacks.",
+      "Spam distribution via email, SMS, or any messaging platform.",
+      "Intentionally crashing nodes or consuming excessive shared resources.",
+      "Operating misleading, fraudulent, or scam websites.",
     ],
   },
   {
-    title: "5. Support Rules",
+    icon: "🎧",
+    title: "5. Support & Communication",
     items: [
-      "Provide clear details when requesting support.",
-      "Do not ping staff unnecessarily.",
-      "Respect staff decisions; harassment or abuse leads to permanent ban.",
+      "Provide clear, detailed information when submitting support requests.",
+      "Do not excessively ping or tag staff members outside of support channels.",
+      "Harassment, threats, or abuse directed at staff will result in a permanent ban from all services.",
     ],
   },
   {
+    icon: "💰",
     title: "6. Billing & Payments",
     items: [
-      "Chargebacks or PayPal disputes = instant termination.",
-      "No refunds unless approved by management.",
-      "Subscriptions must be renewed before the due date.",
+      "Filing chargebacks or payment disputes will result in immediate and permanent termination of all services.",
+      "Refunds are only available within the 12-hour window as outlined in our Refund Policy.",
+      "Service subscriptions must be renewed before the expiration date to avoid automatic suspension.",
     ],
   },
   {
-    title: "7. Fair Usage",
+    icon: "⚖️",
+    title: "7. Fair Usage Policy",
     items: [
-      "We reserve the right to limit or restrict servers causing network issues.",
-      "Shared resources must be used fairly and responsibly.",
+      "EB Nodes reserves the right to throttle, limit, or suspend servers causing network degradation or instability.",
+      "Shared infrastructure resources must be consumed fairly and responsibly by all users.",
     ],
   },
   {
-    title: "8. Enforcement",
+    icon: "⚠️",
+    title: "8. Enforcement & Consequences",
     items: [
-      "Breaking any rule may result in:",
-      "1. Warning",
-      "2. Suspension",
-      "3. Termination",
-      "4. Blacklist from EB Nodes services",
+      "Violations of any of the above terms may result in progressive enforcement:",
+      "① Formal Warning — First offense with documented notice.",
+      "② Temporary Suspension — Service access revoked pending review.",
+      "③ Permanent Termination — Account and all data permanently removed.",
+      "④ Blacklist — Banned from all current and future EB Nodes services.",
     ],
   },
 ];
@@ -79,24 +89,37 @@ const TermsOfService = () => (
     <PageHeroBanner
       image={heroBg}
       title="Terms of Service"
-      subtitle="EB Nodes Rules & Policies"
+      subtitle="Rules, Policies & Guidelines — Effective 2026"
     />
 
     <section className="max-w-3xl mx-auto px-6 pb-16">
-      <div className="space-y-8">
-        {sections.map((section) => (
-          <div key={section.title} className="glass-panel p-6">
-            <h3 className="font-display font-bold text-foreground text-lg mb-4">{section.title}</h3>
-            <ul className="space-y-2">
-              {section.items.map((item, i) => (
-                <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
+      <div className="space-y-6">
+        {sections.map((section, i) => (
+          <motion.div
+            key={section.title}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
+            className="glass-panel p-6"
+          >
+            <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
+              <span>{section.icon}</span> {section.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {section.items.map((item, j) => (
+                <li key={j} className="text-sm text-muted-foreground flex items-start gap-2">
+                  <span className="text-primary mt-0.5 flex-shrink-0">•</span>
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
+
+        <div className="text-center pt-4">
+          <p className="text-xs text-muted-foreground">By using EB Nodes services, you agree to all terms listed above.</p>
+        </div>
       </div>
     </section>
   </Layout>
