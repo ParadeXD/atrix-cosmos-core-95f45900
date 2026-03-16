@@ -144,7 +144,7 @@ const AboutUs = () => (
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Uptime Status</span>
-              <a href="https://status.ebnodes.cloud" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">View Status</a>
+              <a href="https://believe.ebnodes.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">View Status</a>
             </div>
           </div>
         </div>
