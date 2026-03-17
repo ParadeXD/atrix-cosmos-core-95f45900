@@ -7,10 +7,10 @@ import vpsNetwork from "@/assets/vps-network.jpg";
 import { Link } from "react-router-dom";
 
 const plans = [
-  { name: "🚀 VPS Nova", tagline: "Clean start. Silent power.", ram: "8 GB DDR4", cpu: "4 vCPU (Intel Xeon)", storage: "50 GB NVMe", bandwidth: "1 TB", price: "₹599", image: vpsNetwork },
-  { name: "☁️ VPS Stratos", tagline: "Built to scale with ease.", ram: "16 GB DDR4", cpu: "6 vCPU (Intel Xeon)", storage: "90 GB NVMe", bandwidth: "3 TB", price: "₹999", popular: true, image: vpsNetwork },
-  { name: "👑 VPS Dominus", tagline: "Raw muscle for heavy workloads.", ram: "32 GB DDR4", cpu: "12 vCPU (Intel Xeon)", storage: "150 GB NVMe", bandwidth: "5 TB", price: "₹1,980", image: vpsNetwork },
-  { name: "⚡ VPS Overdrive", tagline: "Absolute control. Maximum authority.", ram: "64 GB DDR4", cpu: "18 vCPU (Intel Xeon)", storage: "256 GB NVMe", bandwidth: "Unlimited", price: "₹2,999", image: vpsNetwork },
+  { name: "🖥️ Standard S", tagline: "Starter power. Unmetered speed.", ram: "8 GB DDR4 ECC", cpu: "2 vCores (Xeon E5-2699 v4)", storage: "90 GB SSD", bandwidth: "1 Gbps Unmetered", price: "₹359", image: vpsNetwork },
+  { name: "⚡ Standard M", tagline: "Scale with confidence.", ram: "16 GB DDR4 ECC", cpu: "4 vCores (Xeon E5-2699 v4)", storage: "120 GB SSD", bandwidth: "1 Gbps Unmetered", price: "₹650", popular: true, image: vpsNetwork },
+  { name: "🔥 Standard L", tagline: "Heavy workloads, zero compromise.", ram: "32 GB DDR4 ECC", cpu: "6 vCores (Xeon E5-2699 v4)", storage: "150 GB SSD", bandwidth: "1 Gbps Unmetered", price: "₹800", image: vpsNetwork },
+  { name: "👑 Standard XL", tagline: "Maximum authority. Full control.", ram: "64 GB DDR4 ECC", cpu: "8 vCores (Xeon E5-2699 v4)", storage: "200 GB SSD", bandwidth: "1 Gbps Unmetered", price: "₹1,650", image: vpsNetwork },
 ];
 
 const VPSHosting = () => (
@@ -18,7 +18,7 @@ const VPSHosting = () => (
     <PageHeroBanner
       image={vpsBanner}
       title="VPS Hosting"
-      subtitle="🖥️ Intel Xeon Power · ⚡ NVMe Speed · 🛡️ DDoS Protected"
+      subtitle="🖥️ Intel Xeon E5-2696 v4 · 🛡️ Advanced DDoS Mitigation · 🌐 1 Gbps Unmetered"
     />
 
     <section className="max-w-7xl mx-auto px-6 pb-16">
