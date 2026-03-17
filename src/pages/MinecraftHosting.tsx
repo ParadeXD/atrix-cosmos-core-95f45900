@@ -6,13 +6,13 @@ import minecraftBanner from "@/assets/minecraft-banner.jpg";
 import minecraftWorld from "@/assets/minecraft-world.jpg";
 
 const plans = [
-  { name: "⛏️ Dirt", tagline: "Perfect for testing & small worlds", ram: "2 GB", cpu: "80%", storage: "6 GB NVMe", ports: "1", databases: "1", backups: "1", price: "₹100", image: minecraftWorld },
-  { name: "🪨 Stone", tagline: "Smooth gameplay for small communities", ram: "4 GB", cpu: "160%", storage: "12 GB NVMe", ports: "1", databases: "1", backups: "1", price: "₹182", image: minecraftWorld },
-  { name: "⚔️ Iron", tagline: "Reliable power for growing servers", ram: "6 GB", cpu: "220%", storage: "18 GB NVMe", ports: "2", databases: "1", backups: "2", price: "₹300", image: minecraftWorld },
-  { name: "🥇 Gold", tagline: "High performance for active servers", ram: "8 GB", cpu: "300%", storage: "24 GB NVMe", ports: "2", databases: "2", backups: "2", price: "₹454", popular: true, image: minecraftWorld },
-  { name: "💎 Diamond", tagline: "Maximum power for large communities", ram: "16 GB", cpu: "460%", storage: "30 GB NVMe", ports: "5", databases: "3", backups: "3", price: "₹655", image: minecraftWorld },
-  { name: "🔥 Netherite", tagline: "Elite performance for serious networks", ram: "24 GB", cpu: "500%", storage: "50 GB NVMe", ports: "8", databases: "5", backups: "5", price: "₹775", image: minecraftWorld },
-  { name: "🛡️ Bedrock", tagline: "Unstoppable power for massive servers", ram: "32 GB", cpu: "600%", storage: "75 GB NVMe", ports: "10", databases: "8", backups: "8", price: "₹1,899", image: minecraftWorld },
+  { name: "⛏️ Dirt", tagline: "Best for testing & small servers", ram: "2 GB", cpu: "80%", storage: "6 GB NVMe", ports: "1", databases: "1", backups: "1", price: "₹80", image: minecraftWorld },
+  { name: "🪨 Stone", tagline: "Smooth gameplay for small communities", ram: "4 GB", cpu: "160%", storage: "12 GB NVMe", ports: "1", databases: "1", backups: "1", price: "₹162", image: minecraftWorld },
+  { name: "⚔️ Iron", tagline: "Power + Stability", ram: "6 GB", cpu: "220%", storage: "18 GB NVMe", ports: "2", databases: "1", backups: "2", price: "₹280", image: minecraftWorld },
+  { name: "🥇 Gold", tagline: "High performance for growing servers", ram: "8 GB", cpu: "300%", storage: "24 GB NVMe", ports: "2", databases: "2", backups: "2", price: "₹404", popular: true, image: minecraftWorld },
+  { name: "💎 Diamond", tagline: "Maximum power for large communities", ram: "16 GB", cpu: "460%", storage: "30 GB NVMe", ports: "5", databases: "3", backups: "3", price: "₹625", image: minecraftWorld },
+  { name: "🔥 Netherite", tagline: "Elite performance for serious networks", ram: "24 GB", cpu: "500%", storage: "50 GB NVMe", ports: "8", databases: "5", backups: "5", price: "₹755", image: minecraftWorld },
+  { name: "🛡️ Bedrock", tagline: "Ultimate power for massive servers", ram: "32 GB", cpu: "600%", storage: "75 GB NVMe", ports: "10", databases: "8", backups: "8", price: "₹1,599", image: minecraftWorld },
 ];
 
 const whyEBNodes = [
